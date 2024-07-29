@@ -72,7 +72,7 @@ def get_bus_details_for_route(driver, url):
             except NoSuchElementException:
                 reaching_time = dayvar + " " + bus.find_element(By.CLASS_NAME, 'bp-time.f-19.d-color.disp-Inline').text + ":00"
 
-            star_rating = (((bus.find_element(By.CLASS_NAME, 'column-six.p-right-10.w-10.fl').text).replace("New", "0")).replace(" ", "0"))[0:3]
+            star_rating = (((bus.find_element(By.CLASS_NAME, 'column-six.p-right-10.w-10.fl').text)))[0:3]
             price = (bus.find_element(By.CLASS_NAME, 'fare.d-block').text).replace("INR ", "")
             seats_available = (bus.find_element(By.CLASS_NAME, 'column-eight.w-15.fl').text)[0:2]
 
@@ -162,4 +162,4 @@ final_df = pd.concat(all_buses_data, ignore_index=True)
 # Optionally save to a CSV file
 final_df.to_csv('bus_details.csv', index=False)
 
-print("Data scraping completed and saved to bus_details.csv")
+print("Data scraping completed and stored the details to bus_details.csv")
