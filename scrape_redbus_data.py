@@ -72,7 +72,7 @@ def get_bus_details_for_route(driver, url):
             except NoSuchElementException:
                 reaching_time = dayvar + " " + bus.find_element(By.CLASS_NAME, 'bp-time.f-19.d-color.disp-Inline').text + ":00"
 
-            star_rating = (((bus.find_element(By.CLASS_NAME, 'column-six.p-right-10.w-10.fl').text)))[0:3]
+            star_rating = (bus.find_element(By.CLASS_NAME, 'column-six.p-right-10.w-10.fl').text)[0:3]
             price = (bus.find_element(By.CLASS_NAME, 'fare.d-block').text).replace("INR ", "")
             seats_available = (bus.find_element(By.CLASS_NAME, 'column-eight.w-15.fl').text)[0:2]
 
