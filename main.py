@@ -7,8 +7,8 @@ connection = psycopg2.connect(
     host="localhost",
     port="5432",
     database="red_bus_data",
-    user="postgres",
-    password="Madhan"
+    user="*****",
+    password="****"
 )
 writer = connection.cursor()
 
